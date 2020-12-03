@@ -15,8 +15,6 @@ def skip(n, indexes):
 
 processed_lines = list(map(process_line, lines))
 
-indexes = cycle(range(0, len(processed_lines[0])))
-
 
 def recurse(slope_x, slope_y, lines, trees, indexes):
     if not len(lines):
@@ -29,6 +27,7 @@ def recurse(slope_x, slope_y, lines, trees, indexes):
 
 
 # Part 1
+indexes = cycle(range(0, len(processed_lines[0])))
 print(recurse(3, 1, processed_lines, 0, indexes))
 
 
